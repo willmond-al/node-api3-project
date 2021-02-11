@@ -24,6 +24,22 @@ const validateUserId = async (req, res, next) => {
   }
 }
 
+const validatePostId = async (req, res, next) => {
+  // do your magic!
+  const { id } = req.params
+  try{
+    const post = await Posts.getById(id)
+    if(!post){
+      res.status(400).json({message: `no post with id: ${id}`})
+    } else {
+      req.post = post
+      next()
+    }
+  } catch(err) {
+    res.status(500).json(`server error: ${err}`)
+  }
+}
+
 function validateUser(req, res, next) {
   // do your magic!
   if(!req.body){
@@ -51,5 +67,6 @@ module.exports = {
   logger,
   validateUserId,
   validateUser,
-  validatePost
+  validatePost,
+  validatePostId
 }

@@ -19,10 +19,10 @@ router.get('/', mw.logger, (req, res) => {
   })
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', mw.validatePostId, mw.logger, (req, res) => {
   // RETURN THE POST OBJECT
   // this needs a middleware to verify post id
-
+  res.status(200).json(req.post)
 });
 
 // do not forget to export the router
