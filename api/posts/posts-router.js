@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   // RETURN AN ARRAY WITH ALL THE POSTS
+
 });
 
 router.get('/:id', (req, res) => {
@@ -12,3 +13,4 @@ router.get('/:id', (req, res) => {
 });
 
 // do not forget to export the router
+module.exports = router
