@@ -24,6 +24,22 @@ const validateUserId = async (req, res, next) => {
   }
 }
 
+// const validateNewUserId = async (req, res, next) => {
+//   // do your magic!
+//   const { id } = req.params
+//   try{
+//     const user = await Users.getById(id)
+//     if(user){
+//       res.status(400).json({message: `already user with id: ${id}`})
+//     } else {
+//       req.user = user
+//       next()
+//     }
+//   } catch(err) {
+//     res.status(500).json(`server error: ${err}`)
+//   }
+// }
+
 const validatePostId = async (req, res, next) => {
   // do your magic!
   const { id } = req.params
@@ -68,5 +84,6 @@ module.exports = {
   validateUserId,
   validateUser,
   validatePost,
-  validatePostId
+  validatePostId,
+  // validateNewUserId
 }
