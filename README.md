@@ -6,6 +6,7 @@ In this challenge, you build an API and write custom middleware that satisfies t
 
 ### Task 1: Project Setup
 
+
 There are two possible ways to submit your project. Your instructor should have communicated which method to use for this project during the Guided Project and in your cohort's Slack channel. If you are still unsure, reach out to Lambda Staff.
 
 #### Option A - Codegrade
@@ -27,7 +28,7 @@ There are two possible ways to submit your project. Your instructor should have 
 
 - Wire the application together completing `api/server.js` and `index.js`.
 - Write four custom middleware functions detailed below, in `api/middleware/middleware.js`.
-- Complete the endpoints inside `api/posts/posts-router.js` and `api/users/users-router.js`.
+- Complete the endpoints inside `api/posts/posts-routser.js` and `api/users/users-router.js`.
 - Use the custom middlewares in their appropriate places in the application (specific endpoints, entire routes or globally).
 - There are endpoints in `users-router.js` to retrieve the list of `posts` by a `user` and to store a new `post` for a `user`.
 
