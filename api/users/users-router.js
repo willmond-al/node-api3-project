@@ -1,9 +1,22 @@
 const express = require('express');
 
+const Users = require('./users-model')
+
 const router = express.Router();
+const mw = require('../middleware/middleware')
 
 router.get('/', (req, res) => {
   // RETURN AN ARRAY WITH ALL THE USERS
+  Users.get(req.query)
+  .then(users => {
+    res.status(200).json(users)
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({
+      message: 'error retrieving users'
+    })
+  })
 });
 
 router.get('/:id', (req, res) => {

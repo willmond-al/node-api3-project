@@ -4,13 +4,13 @@ const postsRouter = require('./posts/posts-router')
 const usersRouter = require('./users/users-router')
 
 const server = express();
-
+const morgan = require('morgan')
 
 // remember express by default cannot parse JSON in request bodies
 
 // global middlewares and routes need to be connected here
 
-server.use(express.json())
+server.use(express.json(), morgan('dev'))
 server.use('/api/posts', postsRouter)
 server.use('/api/users', usersRouter)
 
